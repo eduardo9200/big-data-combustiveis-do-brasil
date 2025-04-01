@@ -1,4 +1,4 @@
-# Web Scraping do portal de noticias da UECE
+# Web Scraping, Hadoop e Apache Spark do Site de dados abertos da Série Histórica de Preços de Combustíveis e de GLP
 
 ## Disciplina:
 Big Data
