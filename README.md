@@ -12,7 +12,7 @@ Script Python que acessa o portal de dados abertos da Série Histórica de Preç
 ## Configuração
 Antes de executar, você deve configurar no arquivo **main.py**, da pasta **parte_1_web_scraping**, e no arquivo **dataframe_api.ipynb**, da pasta **parte_3_spark**, o diretório de download dos arquivos extraídos.
 
-Para isso, defina o caminho da pasta nas seguintes variáveis
+Para isso, defina o caminho da pasta nas seguintes variáveis:
 
 **main.py**
 ```bash
