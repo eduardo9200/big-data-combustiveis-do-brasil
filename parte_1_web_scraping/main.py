@@ -7,7 +7,7 @@ from selenium.webdriver.firefox.options import Options
 import time
 import zipfile
 
-download_dir = ""
+download_dir = "C:\\Users\\eduma\\OneDrive\\Documentos\\git\\Uece\\big-data-combustiveis-do-brasil\\parte_1_web_scraping\\downloads"
 
 # Configurações para Firefox
 options = Options()
