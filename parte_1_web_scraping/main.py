@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 import time
 import zipfile
+import unicodedata
 
 download_dir = "caminho/da/pasta/de/downloads/dos/arquivos/csv"
 
@@ -94,3 +95,24 @@ for arquivo in os.listdir(download_dir):
         # Excluir o arquivo .zip após a extração
         os.remove(caminho_arquivo)
         print(f"Arquivo excluído: {arquivo}")
+
+# Ajusta nomes dos arquivos para remover caracteres especiais e espaços em branco
+def normalize_filename(filename):
+    # Remove caracteres especiais e normalize
+    normalized = unicodedata.normalize('NFKD', filename).encode('ASCII', 'ignore').decode('ASCII')
+    
+    # Substitui espaços em branco por underscores
+    normalized = normalized.replace(" ", "_")
+    return normalized
+
+def rename_files_in_directory(directory):
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            old_path = os.path.join(root, file)
+            new_filename = normalize_filename(file)
+            new_path = os.path.join(root, new_filename)
+            if old_path != new_path:
+                os.rename(old_path, new_path)
+                print(f'Renomeado: {old_path} -> {new_path}')
+
+rename_files_in_directory(download_dir)
